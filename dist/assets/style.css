@@ -1,0 +1,99 @@
+body, html{
+    height: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(13, 128, 182);
+}
+
+.velha{
+    display: flex;
+    justify-content: center;
+}
+
+.velha .coluna{
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid white;
+}
+
+.velha .coluna:last-child{
+    border: none;
+}
+
+.velha .quadro{
+    width: 125px;
+    height: 125px;
+    border-bottom: 3px solid white;
+    color: #e4e4e4;
+    font-size: 5em;
+    font-weight: 100;
+    text-align: center;
+}
+
+.velha .quadro:last-child{
+    border: none;
+}
+
+.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+span{
+    user-select: none;
+    margin: 0;
+}
+
+#modais{
+    position: absolute;
+    margin: 130px auto;
+    font-family: inherit;
+    z-index: 3;
+}
+
+.modalClass {
+    background: wheat;
+    width: 200px;
+    padding: 20px;
+    display: block;
+    margin-bottom: 10px;
+    animation-name: aparecer;
+    animation-duration: 0.4s;
+}
+
+.remover {
+    animation: desaparecer .4s;
+    animation-fill-mode: forwards;
+}
+
+#render{
+    position: absolute;
+    top: 100px;
+}
+
+#render .card{
+    margin: 0 5px 5px 0 !important;
+}
+
+@keyframes aparecer{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes desaparecer {
+    50% {
+        transform: translateX(5%);
+    }
+    100%{
+        transform: translateX(-200%);
+    }
+}
